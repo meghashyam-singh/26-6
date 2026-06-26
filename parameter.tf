@@ -1,7 +1,7 @@
 resource "aws_ssm_parameter" "vpc_id" {
     name = "${local.common_name}_vpc_id"
     type = "String"
-    value = "aws_vpc.roboshop_vpc.id"
+    value = aws_vpc.roboshop_vpc.id
 }
 
 resource "aws_ssm_parameter" "igw_id" {
