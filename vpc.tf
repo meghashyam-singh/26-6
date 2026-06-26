@@ -78,6 +78,9 @@ resource "aws_nat_gateway" "roboshop_nat" {
     subnet_id = "aws_subnet.public[0].id"
     allocation_id = "aws_eip.roboshop_eip.id"
     depends_on = [ aws_internet_gateway.roboshop_igw ]
+    tags = {
+        Name = "${local.common_name}_nat"
+    }
 }
 
 resource "aws_route" "public" {
