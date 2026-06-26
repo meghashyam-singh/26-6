@@ -40,5 +40,5 @@ variable "sg_names" {
                 "bastion",
                 "frontend_alb", "backend_alb" 
                 ]
-    type = lsit(string)
+    type = list(string)
 }
