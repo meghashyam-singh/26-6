@@ -45,8 +45,8 @@ resource "aws_security_group_rule" "payment_ingress_rule" {
 
 resource "aws_security_group_rule" "frontend_ingress_rule" {
     type = "ingress"
-    from_port = 8080
-    to_port = 8080
+    from_port = 80
+    to_port = 80
     protocol = "tcp"
     security_group_id = data.aws_ssm_parameter.frontend_sg_id.value
     source_security_group_id = data.aws_ssm_parameter.frontend_alb_sg_id.value
