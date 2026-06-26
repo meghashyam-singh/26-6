@@ -70,7 +70,7 @@ resource "aws_security_group_rue" "frontend_alb_ingress_rule" {
     cidr_blocks = [ "0.0.0.0/0" ]
 }
 
-resource "aws_security_group_rue" "catalogue_ingress_rule" {
+resource "aws_security_group_rue" "catalogue_ingress_rule_bastion" {
     type = "ingress"
     from_port = 22
     to_port = 22
