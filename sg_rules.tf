@@ -78,3 +78,12 @@ resource "aws_security_group_rule" "catalogue_ingress_rule_bastion" {
     security_group_id = data.aws_ssm_parameter.catalogue_sg_id.value
     source_security_group_id = data.aws_ssm_parameter.bastion_sg_id.value
 }
+
+resource "aws_security_group_rule" "bastion_ingress_rule" {
+    type = "ingress"
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+    security_group_id = data.aws_ssm_parameter.bastion_sg_id.value
+    cidr_blocks = [ "0.0.0.0/0" ]
+}
