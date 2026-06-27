@@ -61,3 +61,7 @@ data "aws_ami" "ami_id" {
 data "aws_ssm_parameter" "private_subnet_ids" {
     name = "${local.common_name}_private_subnet_ids"
 }
+
+data "aws_ssm_parameter" "public_subnet_ids" {
+    name = "${local.common_name}_public_subnet_ids"
+}
